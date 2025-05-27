@@ -1,7 +1,7 @@
 Proyecto-MLOPS-Base
 ==============================
 
-Proyecto prediccion para usar en MLOPS
+Proyecto Inicial: Desarrollo de un Modelo de Predicción para Integración en un Ciclo MLOps
 
 Project Organization
 ------------
@@ -24,9 +24,6 @@ proyecto-mlops-base/
 │
 ├── models                       # Trained and serialized models.
 │
-├── notebooks                    # Jupyter notebooks.
-│
-├── references                   # Data dictionaries, manuals, and all other explanatory materials.
 │
 ├── reports                      # Generated analysis as HTML, PDF, LaTeX, etc.
 │   └── figures                  # Generated graphics and figures to be used in reporting.
@@ -35,22 +32,22 @@ proyecto-mlops-base/
 └── src                          # Source code for use in this project.
     ├── __init__.py              # Makes src a Python module.
     │
-    ├── data                     # Data engineering scripts.
-    │   ├── build_features.py    
-    │   ├── cleaning.py          
-    │   ├── ingestion.py         
-    │   ├── labeling.py          
-    │   ├── splitting.py         
-    │   └── validation.py        
+    ├── data_eng                 # Data engineering scripts.
+    │   ├── stage0_loading.py    
+    │   ├── stage1_ingestion.py          
+    │   ├── stage2_cleaning.py         
+    │   ├── stage3_labeling.py          
     │
-    ├── models                   # ML model engineering (a folder for each model).
+    ├── app_exception            # Project exceptions.    
+    │   ├── exception.py         
+    │
+    ├── app_logging              # Project logging.      
+    │   ├── logger.py        
+    │   ├── __init__.py
+    │
+    ├── model_eng                # ML model engineering (a folder for each model).
     │   └── model1      
-    │       ├── dataloader.py    
-    │       ├── hyperparameters_tuning.py 
-    │       ├── model.py         
-    │       ├── predict.py       
-    │       ├── preprocessing.py 
-    │       └── train.py         
+    │       ├── __init__.py    
     │
     └── visualization        # Scripts to create exploratory and results oriented visualizations.
         ├── evaluation.py        
