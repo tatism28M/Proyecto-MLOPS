@@ -10,6 +10,7 @@ Project Organization
 proyecto-mlops-base/
 ├── LICENSE     
 ├── README.md                  
+├── environment.yml              # Conda environment
 ├── Makefile                     # Makefile with commands like `make data` or `make train`                   
 ├── configs                      # Config files (models and training hyperparameters)
 │   └── model1.yaml              

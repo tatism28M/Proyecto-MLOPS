@@ -7,8 +7,8 @@ from sklearn.preprocessing import LabelEncoder
 from app_logging import logging
 from app_exception.exception import AppException
 
-from stage0_loading import GetData
-from stage1_ingestion import LoadData
+from data_eng.stage0_loading import GetData
+from data_eng.stage1_ingestion import LoadData
 
 
 class FeatureEngineering:

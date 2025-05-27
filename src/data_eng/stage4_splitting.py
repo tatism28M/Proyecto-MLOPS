@@ -4,8 +4,9 @@ import pandas as pd
 
 from app_logging import logging
 
-from stage3_labeling import FeatureEngineering
-from stage0_loading import GetData
+from data_eng.stage0_loading import GetData
+from data_eng.stage3_labeling import FeatureEngineering
+
 
 class SplitData:
     """
