@@ -35,7 +35,7 @@ class LoadData:
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
     args.add_argument('--input_path', default='data/external/Consignment_pricing.csv', help='Ruta del archivo CSV de entrada usado para entrenar el modelo de predicción')
-    args.add_argument('--output_path', default='data/raw/dataset.csv', help='Ruta de salida para guardar los datos')
+    args.add_argument('--output_path', default='data/raw/Dataset.csv', help='Ruta de salida para guardar los datos')
 
     parsed_args = args.parse_args()
     

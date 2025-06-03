@@ -153,8 +153,8 @@ class FeatureEngineering:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_path', default='data/interim/datacleaned.csv')
-    parser.add_argument('--output_path', default='data/processed/dataprocesed.csv')
+    parser.add_argument('--input_path', default='data/interim/Cleaned_Dataset.csv')
+    parser.add_argument('--output_path', default='data/processed/Procesed_Dataset.csv')
     args = parser.parse_args()
 
     data = FeatureEngineering().final_data(input_path=args.input_path, output_path=args.output_path)
