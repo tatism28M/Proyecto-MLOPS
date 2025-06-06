@@ -4,7 +4,6 @@ import argparse
 
 from app_logging import logging
 from app_exception.exception import AppException
-from data_eng.stage0_loading import GetData
 
 class LoadData:
     '''
@@ -13,14 +12,15 @@ class LoadData:
     '''
 
     def __init__(self):
-        self.getdata = GetData()
+        pass
 
     def load_data(self, input_path, output_path):
             
         try:
             logging.info(f"Loading data from the source")
-            
-            self.data = self.getdata.get_data(input_path)
+            self.data_path = input_path
+            self.data = pd.read_csv(self.data_path, sep=',', encoding='utf-8')
+
             self.raw_data_path = output_path
             self.data.to_csv(self.raw_data_path, sep=',', encoding='utf-8', index=False)
             logging.info(f"Data Loaded from the source Successfully !!!")
@@ -40,5 +40,3 @@ if __name__ == '__main__':
     parsed_args = args.parse_args()
     
     LoadData().load_data(input_path=parsed_args.input_path, output_path=parsed_args.output_path)
-
-
