@@ -31,17 +31,18 @@ class GetData:
             local_path = os.path.join(self.external_data, "Consignment_pricing.csv")
 
             # Descargar el archivo CSV desde GitHub
-            response = requests.get(github_csv_url)
-            response.raise_for_status()  # lanza una excepción si la descarga falla
+            if not os.path.exists(local_path):
+                response = requests.get(github_csv_url)
+                response.raise_for_status()  # lanza una excepción si la descarga falla
 
-            with open(local_path, 'wb') as f:
-                f.write(response.content)
+                with open(local_path, 'wb') as f:
+                    f.write(response.content)
 
-            logging.info("CSV file downloaded successfully")
+                logging.info("CSV file downloaded successfully")
 
             # Leer el archivo CSV descargado
             self.data_path = local_path
-            print (local_path)
+
             self.data = pd.read_csv(self.data_path, sep=',', encoding='utf-8')
 
             logging.info("Data successfully uploaded from downloaded file")
