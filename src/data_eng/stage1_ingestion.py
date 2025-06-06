@@ -13,14 +13,18 @@ class LoadData:
     '''
 
     def __init__(self):
-        self.getdata = GetData()
+        pass #self.getdata = GetData()
 
     def load_data(self, input_path, output_path):
             
         try:
             logging.info(f"Loading data from the source")
             
-            self.data = self.getdata.get_data(input_path)
+            #self.data = self.getdata.get_data(input_path)
+            
+            self.data = input_path
+            self.data = pd.read_csv(self.data) #pd.read_csv(self.data_path, sep=',', encoding='utf-8')
+
             self.raw_data_path = output_path
             self.data.to_csv(self.raw_data_path, sep=',', encoding='utf-8', index=False)
             logging.info(f"Data Loaded from the source Successfully !!!")
