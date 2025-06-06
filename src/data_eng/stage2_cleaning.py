@@ -6,8 +6,6 @@ import sys
 from app_logging import logging
 from app_exception.exception import AppException
 
-from data_eng.stage0_loading import GetData
-from data_eng.stage1_ingestion import LoadData
 
 class Preprocessing:
     '''
@@ -16,13 +14,14 @@ class Preprocessing:
     class return and save csv data to a specified folder path
     '''
     def __init__(self):
-        self.load_data = LoadData()
-        self.get_data = GetData()
+        pass 
 
     def column_imputation(self, input_path):
         try:
             logging.info("'column_imputation' FUNCTION STARTED")
-            self.data = self.get_data.get_data(input_path)
+            self.data_path = input_path
+            self.data = pd.read_csv(self.data_path, sep=',', encoding='utf-8')
+
             self.data.columns = self.data.columns.str.lower()
             self.data.columns = self.data.columns.str.replace(" ", "_")
             #self.data.columns = self.data.columns.str.replace("#", "")
@@ -170,7 +169,6 @@ class Preprocessing:
     def data_(self, input_path, output_path):
         try:
             logging.info("'data' FUNCTION STARTED")
-            #self.config = self.get_data.read_params(input_path)
             self.data = self.drop_unnecessary_columns(input_path)
             
             self.data["po_/_so_#"] = self.data["po_/_so_#"].apply(self.reorder)
@@ -187,7 +185,6 @@ class Preprocessing:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    #parser.add_argument('--input_path', default='data/raw/Consignment_pricing_raw.csv')
     parser.add_argument('--input_path', default='data/raw/Dataset.csv')
     parser.add_argument('--output_path', default='data/interim/Cleaned_Dataset.csv')
     args = parser.parse_args()
