@@ -7,9 +7,6 @@ from sklearn.preprocessing import LabelEncoder
 from app_logging import logging
 from app_exception.exception import AppException
 
-from data_eng.stage0_loading import GetData
-from data_eng.stage1_ingestion import LoadData
-
 
 class FeatureEngineering:
     '''
@@ -19,14 +16,13 @@ class FeatureEngineering:
     '''
 
     def __init__(self):
-        self.get_data = GetData()
-        self.load_data = LoadData()
+        pass 
         
     def data_(self, input_path):
         try:
             logging.info("'data_' FUNCTION STARTED")
-            self.data = input_path 
-            self.data = pd.read_csv(self.data)
+            self.data_path = input_path 
+            self.data = pd.read_csv(self.data_path, sep=',', encoding='utf-8')
             logging.info("Data loaded successfully")
             return self.data
         except Exception as e:
@@ -154,7 +150,7 @@ class FeatureEngineering:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_path', default='data/interim/Cleaned_Dataset.csv')
-    parser.add_argument('--output_path', default='data/processed/Procesed_Dataset.csv')
+    parser.add_argument('--output_path', default='data/processed/Processed_Dataset.csv')
     args = parser.parse_args()
 
     data = FeatureEngineering().final_data(input_path=args.input_path, output_path=args.output_path)
