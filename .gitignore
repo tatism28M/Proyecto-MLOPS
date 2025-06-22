@@ -85,6 +85,9 @@ target/
 *.swp
 *.swo
 
+*.dvc
+data/**/*.dvc
+
 # Mypy cache
 .mypy_cache/
 configs/credentials/*.json
