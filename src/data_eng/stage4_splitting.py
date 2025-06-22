@@ -1,9 +1,11 @@
 import argparse
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import mlflow
+import mlflow.sklearn
 
+from mlflow.models import infer_signature
 from app_logging import logging
-
 from data_eng.stage0_loading import GetData
 from data_eng.stage3_labeling import FeatureEngineering
 

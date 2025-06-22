@@ -1,0 +1,9 @@
+[core]
+    remote = gdrive-remote
+['remote "gdrive-remote"']
+    url = gdrive://1O57hI1Ycj49tM-iq9KrXEmT3RneW8cBa
+    gdrive_use_service_account = true
+    gdrive_service_account_json_file_path = /configs/credentials/useful-space-463214-r7-e66a73eded17.json
+['remote "gcs-remote"']
+    url = gs://mlops-practica-2025
+    credentialpath = /configs/credentials/useful-space-463214-r7-e66a73eded17.json

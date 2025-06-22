@@ -2,8 +2,11 @@ import sys
 import argparse
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
+import mlflow
+import mlflow.sklearn
 
+from mlflow.models import infer_signature
+from sklearn.preprocessing import LabelEncoder
 from app_logging import logging
 from app_exception.exception import AppException
 
