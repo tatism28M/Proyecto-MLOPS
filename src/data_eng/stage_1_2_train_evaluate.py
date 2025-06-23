@@ -5,7 +5,6 @@ import sys
 import pandas as pd
 import numpy as np
 import os
-
 import hydra
 from omegaconf import DictConfig
 
@@ -29,11 +28,6 @@ class TrainEvaluate:
         self.get_data = GetData()
         self.filename = config.model_data.file_model
 
-    def evaluation_metrics(self, act, pred):
-        self.r2_score = r2_score(act, pred)
-        self.mse = mean_squared_error(act, pred)
-        self.rmse = np.sqrt(mean_squared_error(act, pred))
-        return self.r2_score, self.mse, self.rmse
 
     def model_eval(self, config):
         try:

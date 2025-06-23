@@ -1,6 +1,6 @@
 [core]
-    remote = myremote
-['remote "myremote"']
-    url = gdrive://1O57hI1Ycj49tM-iq9KrXEmT3RneW8cBa
-['remote "gdrive-remote"']
-    url = gdrive://1O57hI1Ycj49tM-iq9KrXEmT3RneW8cBa
+    no_scm = True
+    remote = lab2-512@proyecto-mlops-463304.iam.gserviceaccount.com
+    hardlink_lock = true
+['remote "lab2-512@proyecto-mlops-463304.iam.gserviceaccount.com"']
+    url = https://drive.google.com/drive/u/1/folders/1O57hI1Ycj49tM-iq9KrXEmT3RneW8cBa
