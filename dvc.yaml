@@ -1,0 +1,7 @@
+stages:
+  prepare_data:
+    cmd: echo "Data preparation stage"
+    deps:
+    - data/raw/Dataset.csv
+    outs:
+    - data/processed/
